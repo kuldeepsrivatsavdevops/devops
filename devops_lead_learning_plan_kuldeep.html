@@ -1,0 +1,332 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans)}
+.phase-header{display:flex;align-items:center;gap:10px;padding:0.75rem 1rem;border-radius:var(--border-radius-md);margin-bottom:12px;cursor:pointer;border:0.5px solid var(--color-border-tertiary)}
+.phase-header:hover{background:var(--color-background-secondary)}
+.phase-dot{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;flex-shrink:0}
+.topic-row{display:flex;align-items:flex-start;gap:10px;padding:10px 1rem;border-bottom:0.5px solid var(--color-border-tertiary)}
+.topic-row:last-child{border-bottom:none}
+.topic-num{font-size:11px;font-weight:500;padding:2px 7px;border-radius:4px;white-space:nowrap;margin-top:2px}
+.badge{font-size:10px;padding:2px 7px;border-radius:20px;white-space:nowrap;margin-right:4px}
+.resource-pill{display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:3px 9px;border-radius:20px;border:0.5px solid var(--color-border-tertiary);color:var(--color-text-secondary);margin:2px 2px 2px 0;background:var(--color-background-primary)}
+.week-label{font-size:11px;color:var(--color-text-secondary);font-weight:500;min-width:56px;margin-top:3px}
+.phase-body{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);margin-bottom:1.25rem;overflow:hidden}
+.tab{padding:7px 14px;font-size:13px;border-radius:20px;border:none;cursor:pointer;background:transparent;color:var(--color-text-secondary)}
+.tab.active{background:var(--color-background-secondary);color:var(--color-text-primary);font-weight:500}
+.milestone-row{display:flex;gap:8px;align-items:flex-start;padding:8px 1rem;border-bottom:0.5px solid var(--color-border-tertiary)}
+.milestone-row:last-child{border-bottom:none}
+</style>
+
+<h2 class="sr-only">DevOps Lead learning plan for Kuldeep Kamasamudram — 10-week roadmap targeting Lead/SRE Manager roles in Canada</h2>
+
+<div style="display:flex;gap:8px;margin-bottom:1.25rem;flex-wrap:wrap">
+  <button class="tab active" id="tab-plan" onclick="showTab('plan')">10-week roadmap</button>
+  <button class="tab" id="tab-certs" onclick="showTab('certs')">Certifications</button>
+  <button class="tab" id="tab-projects" onclick="showTab('projects')">Portfolio projects</button>
+  <button class="tab" id="tab-tools" onclick="showTab('tools')">Tools & resources</button>
+</div>
+
+<div id="view-plan">
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:1.5rem">
+  <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:0.75rem 1rem;text-align:center">
+    <div style="font-size:20px;font-weight:500;color:var(--color-text-primary)">10 wks</div>
+    <div style="font-size:12px;color:var(--color-text-secondary)">Total duration</div>
+  </div>
+  <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:0.75rem 1rem;text-align:center">
+    <div style="font-size:20px;font-weight:500;color:var(--color-text-primary)">3 phases</div>
+    <div style="font-size:12px;color:var(--color-text-secondary)">Foundation → Deep → Lead</div>
+  </div>
+  <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:0.75rem 1rem;text-align:center">
+    <div style="font-size:20px;font-weight:500;color:var(--color-text-primary)">8 topics</div>
+    <div style="font-size:12px;color:var(--color-text-secondary)">All 8 from your list</div>
+  </div>
+  <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:0.75rem 1rem;text-align:center">
+    <div style="font-size:20px;font-weight:500;color:#1D9E75">10–12 hrs/wk</div>
+    <div style="font-size:12px;color:var(--color-text-secondary)">Recommended effort</div>
+  </div>
+</div>
+
+<div style="font-size:11px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;color:var(--color-text-secondary);margin-bottom:10px">Phase 1 — Foundation (weeks 1–3)</div>
+<div class="phase-body">
+  <div class="topic-row">
+    <span class="week-label">Wk 1</span>
+    <div style="flex:1">
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:5px">
+        <span style="font-size:14px;font-weight:500;color:var(--color-text-primary)">Cloud infrastructure — AWS & GCP</span>
+        <span class="badge" style="background:#E6F1FB;color:#0C447C">Topic 1</span>
+      </div>
+      <div style="font-size:13px;color:var(--color-text-secondary);margin-bottom:6px">Master VPCs, subnets, IAM roles, EC2/GKE compute, S3/GCS storage, load balancers. Learn how regions, AZs, and networking tie into your CI/CD pipelines.</div>
+      <div>
+        <span class="resource-pill"><i class="ti ti-brand-aws" aria-hidden="true"></i> AWS Skill Builder (free)</span>
+        <span class="resource-pill"><i class="ti ti-book" aria-hidden="true"></i> GCP Fundamentals on Coursera</span>
+        <span class="resource-pill"><i class="ti ti-player-play" aria-hidden="true"></i> Stephane Maarek – AWS DVA</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-row">
+    <span class="week-label">Wk 2</span>
+    <div style="flex:1">
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:5px">
+        <span style="font-size:14px;font-weight:500;color:var(--color-text-primary)">Docker & containerizing GitHub repos</span>
+        <span class="badge" style="background:#E6F1FB;color:#0C447C">Topic 4</span>
+      </div>
+      <div style="font-size:13px;color:var(--color-text-secondary);margin-bottom:6px">Dockerfile best practices, multi-stage builds, .dockerignore, tagging strategy, pushing to ECR/GCR. Practice dockerizing one of your existing test automation repos.</div>
+      <div>
+        <span class="resource-pill"><i class="ti ti-brand-docker" aria-hidden="true"></i> Docker Docs – Get Started</span>
+        <span class="resource-pill"><i class="ti ti-player-play" aria-hidden="true"></i> TechWorld with Nana (YouTube)</span>
+        <span class="resource-pill"><i class="ti ti-code" aria-hidden="true"></i> Play with Docker (free lab)</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-row">
+    <span class="week-label">Wk 3</span>
+    <div style="flex:1">
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:5px">
+        <span style="font-size:14px;font-weight:500;color:var(--color-text-primary)">CI/CD pipeline fundamentals</span>
+        <span class="badge" style="background:#E6F1FB;color:#0C447C">Topic 3</span>
+      </div>
+      <div style="font-size:13px;color:var(--color-text-secondary);margin-bottom:6px">GitHub Actions deep-dive (you already use this), then Jenkins & Azure Pipelines. Build a full pipeline: lint → test → build Docker image → push to registry → deploy to staging. Leverage your Selenium/Karate test suites as the test gate.</div>
+      <div>
+        <span class="resource-pill"><i class="ti ti-brand-github" aria-hidden="true"></i> GitHub Actions docs</span>
+        <span class="resource-pill"><i class="ti ti-player-play" aria-hidden="true"></i> Abhishek Veeramalla (YouTube)</span>
+        <span class="resource-pill"><i class="ti ti-certificate" aria-hidden="true"></i> Azure DevOps free course – MS Learn</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="font-size:11px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;color:var(--color-text-secondary);margin-bottom:10px">Phase 2 — Deep dive (weeks 4–8)</div>
+<div class="phase-body">
+  <div class="topic-row">
+    <span class="week-label">Wk 4–5</span>
+    <div style="flex:1">
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:5px">
+        <span style="font-size:14px;font-weight:500;color:var(--color-text-primary)">Kubernetes orchestration — EKS & GKE</span>
+        <span class="badge" style="background:#EEEDFE;color:#3C3489">Topic 2 + 7</span>
+      </div>
+      <div style="font-size:13px;color:var(--color-text-secondary);margin-bottom:6px">Pods, deployments, services, ingress controllers, namespaces, RBAC, config maps. Week 5: EKS cluster setup on AWS, node groups, managed add-ons. GKE Autopilot. Configuration changes on ASP.NET workloads running on EKS — replicas, resource limits, rolling updates.</div>
+      <div>
+        <span class="resource-pill"><i class="ti ti-player-play" aria-hidden="true"></i> KodeKloud – Kubernetes for Beginners</span>
+        <span class="resource-pill"><i class="ti ti-brand-aws" aria-hidden="true"></i> AWS EKS Workshop (free)</span>
+        <span class="resource-pill"><i class="ti ti-code" aria-hidden="true"></i> Killer.sh K8s labs</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-row">
+    <span class="week-label">Wk 6</span>
+    <div style="flex:1">
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:5px">
+        <span style="font-size:14px;font-weight:500;color:var(--color-text-primary)">Helm charts</span>
+        <span class="badge" style="background:#EEEDFE;color:#3C3489">Topic 5</span>
+      </div>
+      <div style="font-size:13px;color:var(--color-text-secondary);margin-bottom:6px">Chart structure (Chart.yaml, values.yaml, templates), conditionals, helpers, overrides per environment. Design a Helm chart from scratch for one of your containerized apps. Package and push to a Helm registry.</div>
+      <div>
+        <span class="resource-pill"><i class="ti ti-book" aria-hidden="true"></i> Helm official docs</span>
+        <span class="resource-pill"><i class="ti ti-player-play" aria-hidden="true"></i> TechWorld with Nana – Helm full course</span>
+        <span class="resource-pill"><i class="ti ti-code" aria-hidden="true"></i> ArtifactHub.io examples</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-row">
+    <span class="week-label">Wk 7</span>
+    <div style="flex:1">
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:5px">
+        <span style="font-size:14px;font-weight:500;color:var(--color-text-primary)">Terraform (IaC)</span>
+        <span class="badge" style="background:#EEEDFE;color:#3C3489">Topic 6</span>
+      </div>
+      <div style="font-size:13px;color:var(--color-text-secondary);margin-bottom:6px">HCL syntax, providers, modules, state management, remote backends (S3). Provision a VPC + EKS cluster end-to-end using Terraform. This is the most employer-tested skill in Canadian DevOps interviews — prioritize hands-on labs over video.</div>
+      <div>
+        <span class="resource-pill"><i class="ti ti-player-play" aria-hidden="true"></i> Zeal Vora – Terraform on Udemy</span>
+        <span class="resource-pill"><i class="ti ti-code" aria-hidden="true"></i> HashiCorp Learn (free)</span>
+        <span class="resource-pill"><i class="ti ti-brand-github" aria-hidden="true"></i> terraform-aws-modules (GitHub)</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-row">
+    <span class="week-label">Wk 8</span>
+    <div style="flex:1">
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:5px">
+        <span style="font-size:14px;font-weight:500;color:var(--color-text-primary)">Secure vaults & secrets management</span>
+        <span class="badge" style="background:#EEEDFE;color:#3C3489">Topic 8</span>
+      </div>
+      <div style="font-size:13px;color:var(--color-text-secondary);margin-bottom:6px">HashiCorp Vault — dynamic secrets, KV engine, auth methods (K8s auth, AWS IAM). AWS Secrets Manager and Parameter Store. Inject secrets into your pipelines and pods without hardcoding. Critical skill for banking/fintech — your TD background is a direct asset here.</div>
+      <div>
+        <span class="resource-pill"><i class="ti ti-player-play" aria-hidden="true"></i> HashiCorp Vault tutorials (free)</span>
+        <span class="resource-pill"><i class="ti ti-brand-aws" aria-hidden="true"></i> AWS Secrets Manager workshop</span>
+        <span class="resource-pill"><i class="ti ti-book" aria-hidden="true"></i> Vault on K8s – official docs</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="font-size:11px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;color:var(--color-text-secondary);margin-bottom:10px">Phase 3 — Lead-level skills (weeks 9–10)</div>
+<div class="phase-body">
+  <div class="topic-row">
+    <span class="week-label">Wk 9</span>
+    <div style="flex:1">
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:5px">
+        <span style="font-size:14px;font-weight:500;color:var(--color-text-primary)">Observability & SRE practices</span>
+        <span class="badge" style="background:#EAF3DE;color:#27500A">Lead skills</span>
+      </div>
+      <div style="font-size:13px;color:var(--color-text-secondary);margin-bottom:6px">Prometheus + Grafana, distributed tracing (Jaeger/Zipkin), log aggregation (ELK/Loki). SLIs, SLOs, error budgets. This is what distinguishes a Lead from an individual contributor — you own reliability, not just deployment.</div>
+      <div>
+        <span class="resource-pill"><i class="ti ti-player-play" aria-hidden="true"></i> Prometheus + Grafana – TechWorld</span>
+        <span class="resource-pill"><i class="ti ti-book" aria-hidden="true"></i> Google SRE Book (free online)</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-row">
+    <span class="week-label">Wk 10</span>
+    <div style="flex:1">
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:5px">
+        <span style="font-size:14px;font-weight:500;color:var(--color-text-primary)">Platform design & team leadership</span>
+        <span class="badge" style="background:#EAF3DE;color:#27500A">Lead skills</span>
+      </div>
+      <div style="font-size:13px;color:var(--color-text-secondary);margin-bottom:6px">GitOps with ArgoCD, platform engineering concepts, defining golden paths for dev teams. Pair this with your existing Agile leadership — you already manage 18 QEs, so frame DevOps as platform ownership for engineering teams.</div>
+      <div>
+        <span class="resource-pill"><i class="ti ti-player-play" aria-hidden="true"></i> ArgoCD docs + crash course</span>
+        <span class="resource-pill"><i class="ti ti-book" aria-hidden="true"></i> Platform Engineering on Medium</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div id="view-certs" style="display:none">
+<div style="font-size:11px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;color:var(--color-text-secondary);margin-bottom:10px">Certifications — prioritized for your timeline</div>
+<div class="phase-body">
+  <div class="topic-row">
+    <div style="flex:1">
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:5px">
+        <span style="font-size:14px;font-weight:500;color:var(--color-text-primary)">AWS Certified DevOps Engineer – Professional</span>
+        <span class="badge" style="background:#E1F5EE;color:#085041">Highest priority</span>
+      </div>
+      <div style="font-size:13px;color:var(--color-text-secondary);margin-bottom:5px">The single best credential for DevOps Lead roles at Canadian banks and consulting firms. Covers CI/CD, IaC, monitoring, high availability. ~3 months prep aligns perfectly with your timeline.</div>
+      <div><span class="resource-pill">Exam: DVA-C02 → DOP-C02</span><span class="resource-pill">Cost: ~$300 CAD</span><span class="resource-pill">Prep: Stephane Maarek on Udemy</span></div>
+    </div>
+  </div>
+  <div class="topic-row">
+    <div style="flex:1">
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:5px">
+        <span style="font-size:14px;font-weight:500;color:var(--color-text-primary)">Certified Kubernetes Administrator (CKA)</span>
+        <span class="badge" style="background:#E6F1FB;color:#0C447C">High priority</span>
+      </div>
+      <div style="font-size:13px;color:var(--color-text-secondary);margin-bottom:5px">Hands-on, performance-based exam. Most respected K8s credential. Required or preferred in 70%+ of DevOps Lead postings. Do this in month 2.</div>
+      <div><span class="resource-pill">Linux Foundation</span><span class="resource-pill">Cost: ~$395 USD</span><span class="resource-pill">Prep: KodeKloud + killer.sh</span></div>
+    </div>
+  </div>
+  <div class="topic-row">
+    <div style="flex:1">
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:5px">
+        <span style="font-size:14px;font-weight:500;color:var(--color-text-primary)">HashiCorp Terraform Associate</span>
+        <span class="badge" style="background:#FAEEDA;color:#633806">Good to have</span>
+      </div>
+      <div style="font-size:13px;color:var(--color-text-secondary);margin-bottom:5px">Low cost, quick to achieve (~2 weeks), validates IaC skills directly. Good LinkedIn keyword booster. Take it after week 7.</div>
+      <div><span class="resource-pill">Cost: $70 USD</span><span class="resource-pill">Exam: 003</span><span class="resource-pill">Prep: HashiCorp Learn (free)</span></div>
+    </div>
+  </div>
+  <div class="topic-row">
+    <div style="flex:1">
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:5px">
+        <span style="font-size:14px;font-weight:500;color:var(--color-text-primary)">Google Professional DevOps Engineer</span>
+        <span class="badge" style="background:#EEEDFE;color:#3C3489">Optional — month 3</span>
+      </div>
+      <div style="font-size:13px;color:var(--color-text-secondary);margin-bottom:5px">Relevant if targeting GCP-heavy orgs (Shopify, Google, startups). Skip if focusing on banking (AWS-dominant).</div>
+      <div><span class="resource-pill">Cost: ~$200 USD</span><span class="resource-pill">Prep: Google Cloud Skills Boost</span></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div id="view-projects" style="display:none">
+<div style="font-size:11px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;color:var(--color-text-secondary);margin-bottom:10px">Portfolio projects — build these to show, not just tell</div>
+<div class="phase-body">
+  <div class="milestone-row">
+    <span style="background:#E6F1FB;color:#0C447C;font-size:11px;font-weight:500;padding:2px 8px;border-radius:4px;white-space:nowrap;margin-top:2px">Project 1</span>
+    <div style="flex:1">
+      <div style="font-size:14px;font-weight:500;color:var(--color-text-primary);margin-bottom:3px">Dockerized QA automation pipeline on GitHub Actions</div>
+      <div style="font-size:13px;color:var(--color-text-secondary)">Containerize your existing Selenium/Karate test suite → push to ECR → GitHub Actions triggers tests on every PR → test report published as artifact. This directly bridges your QA background into DevOps.</div>
+    </div>
+  </div>
+  <div class="milestone-row">
+    <span style="background:#E6F1FB;color:#0C447C;font-size:11px;font-weight:500;padding:2px 8px;border-radius:4px;white-space:nowrap;margin-top:2px">Project 2</span>
+    <div style="flex:1">
+      <div style="font-size:14px;font-weight:500;color:var(--color-text-primary);margin-bottom:3px">Terraform + EKS: full infrastructure as code</div>
+      <div style="font-size:13px;color:var(--color-text-secondary)">Provision a VPC, EKS cluster, and node group on AWS using Terraform modules. Store state in S3. Document with README. This is your "show me IaC" answer in every DevOps interview.</div>
+    </div>
+  </div>
+  <div class="milestone-row">
+    <span style="background:#E6F1FB;color:#0C447C;font-size:11px;font-weight:500;padding:2px 8px;border-radius:4px;white-space:nowrap;margin-top:2px">Project 3</span>
+    <div style="flex:1">
+      <div style="font-size:14px;font-weight:500;color:var(--color-text-primary);margin-bottom:3px">Helm chart with Vault-injected secrets on EKS</div>
+      <div style="font-size:13px;color:var(--color-text-secondary)">Deploy a sample app on EKS via Helm, inject DB credentials from HashiCorp Vault using the Vault Agent sidecar. Proves you can do orchestration + secrets together — the holy grail for banking DevOps roles.</div>
+    </div>
+  </div>
+  <div class="milestone-row">
+    <span style="background:#E6F1FB;color:#0C447C;font-size:11px;font-weight:500;padding:2px 8px;border-radius:4px;white-space:nowrap;margin-top:2px">Project 4</span>
+    <div style="flex:1">
+      <div style="font-size:14px;font-weight:500;color:var(--color-text-primary);margin-bottom:3px">Observability stack: Prometheus + Grafana on K8s</div>
+      <div style="font-size:13px;color:var(--color-text-secondary)">Deploy Prometheus and Grafana via Helm on your EKS cluster. Define 3 SLOs for your test app. Build a Grafana dashboard. Screenshot it for your portfolio — visual proof of SRE thinking.</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div id="view-tools" style="display:none">
+<div style="font-size:11px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;color:var(--color-text-secondary);margin-bottom:10px">Free tools & labs to set up this week</div>
+<div class="phase-body">
+  <div class="topic-row">
+    <i class="ti ti-tools" style="font-size:18px;color:var(--color-text-secondary);margin-top:2px" aria-hidden="true"></i>
+    <div style="flex:1">
+      <div style="font-size:14px;font-weight:500;color:var(--color-text-primary);margin-bottom:4px">AWS Free Tier account</div>
+      <div style="font-size:13px;color:var(--color-text-secondary)">Create if you don't have one. Set a $10 billing alert immediately. Use for EC2, EKS, ECR, S3, Secrets Manager labs.</div>
+    </div>
+  </div>
+  <div class="topic-row">
+    <i class="ti ti-tools" style="font-size:18px;color:var(--color-text-secondary);margin-top:2px" aria-hidden="true"></i>
+    <div style="flex:1">
+      <div style="font-size:14px;font-weight:500;color:var(--color-text-primary);margin-bottom:4px">KodeKloud (free tier)</div>
+      <div style="font-size:13px;color:var(--color-text-secondary)">Best browser-based K8s, Docker, and Terraform labs. No local install needed. Use free tier for Kubernetes basics, upgrade ($20/mo) for CKA mock exams.</div>
+    </div>
+  </div>
+  <div class="topic-row">
+    <i class="ti ti-tools" style="font-size:18px;color:var(--color-text-secondary);margin-top:2px" aria-hidden="true"></i>
+    <div style="flex:1">
+      <div style="font-size:14px;font-weight:500;color:var(--color-text-primary);margin-bottom:4px">Local environment: Docker Desktop + kubectl + Terraform CLI</div>
+      <div style="font-size:13px;color:var(--color-text-secondary)">Install these three tools on day 1. Use kind (K8s in Docker) for local K8s clusters without cloud cost. Minikube is an alternative.</div>
+    </div>
+  </div>
+  <div class="topic-row">
+    <i class="ti ti-tools" style="font-size:18px;color:var(--color-text-secondary);margin-top:2px" aria-hidden="true"></i>
+    <div style="flex:1">
+      <div style="font-size:14px;font-weight:500;color:var(--color-text-primary);margin-bottom:4px">Udemy courses (buy during sales — $15 each)</div>
+      <div style="font-size:13px;color:var(--color-text-secondary)">Stephane Maarek – AWS DevOps Pro · Zeal Vora – Terraform · Mumshad – CKA with Practice Tests. Never pay full price — Udemy sales run every 2–3 weeks.</div>
+    </div>
+  </div>
+  <div class="topic-row">
+    <i class="ti ti-tools" style="font-size:18px;color:var(--color-text-secondary);margin-top:2px" aria-hidden="true"></i>
+    <div style="flex:1">
+      <div style="font-size:14px;font-weight:500;color:var(--color-text-primary);margin-bottom:4px">TechWorld with Nana (YouTube — free)</div>
+      <div style="font-size:13px;color:var(--color-text-secondary)">Best free DevOps channel. Full courses on Docker, Kubernetes, Helm, ArgoCD, Terraform. Start here before buying anything.</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div style="margin-top:1rem;display:flex;gap:8px;flex-wrap:wrap">
+  <button style="font-size:12px;font-weight:500;padding:5px 14px;border-radius:6px;border:0.5px solid var(--color-border-secondary);background:transparent;color:var(--color-text-primary);cursor:pointer" onclick="sendPrompt('Can you create a day-by-day study schedule for week 1 of the DevOps learning plan covering AWS and Docker?')">Build week 1 daily schedule ↗</button>
+  <button style="font-size:12px;font-weight:500;padding:5px 14px;border-radius:6px;border:0.5px solid var(--color-border-secondary);background:transparent;color:var(--color-text-primary);cursor:pointer" onclick="sendPrompt('What are the top interview questions for a DevOps Lead or SRE Manager role at a Canadian bank?')">DevOps interview prep ↗</button>
+  <button style="font-size:12px;font-weight:500;padding:5px 14px;border-radius:6px;border:0.5px solid var(--color-border-secondary);background:transparent;color:var(--color-text-primary);cursor:pointer" onclick="sendPrompt('Help me update my LinkedIn profile to also target DevOps Lead and SRE Manager roles alongside UAT Test Lead roles in Canada')">Update LinkedIn for DevOps ↗</button>
+</div>
+
+<script>
+function showTab(t){
+  ['plan','certs','projects','tools'].forEach(id=>{
+    document.getElementById('view-'+id).style.display = id===t?'block':'none';
+    document.getElementById('tab-'+id).classList.toggle('active', id===t);
+  });
+}
+</script>

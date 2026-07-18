@@ -1,0 +1,152 @@
+Day2:
+----------------------------------------------------------------------
+
+1. Terraform Targets and multiple “tfvars” files
+2. Terraform outputs
+3. Terraform import
+4. Terraform taint and replace
+5. Terraform workspaces
+6. Creating AWS Resources (VPC, S3 Bucket, EC2, EBS, RDS, EFs) 
+7. Comments
+
+----------------------------------------------------------------------
+
+1. Terraform Targets and multiple “tfvars” files:
+-------------------------------------------------
+
+Cloudinfra.tf file:
+
+		provider "aws" {
+		  region = "ap-south-2"
+		}
+		resource "aws_instance" "instance" {
+		  ami           = var.inst_ami
+		  instance_type = var.inst_type
+		  count         = var.inst_count
+		  tags = {
+			name = "ccitinfra"
+		  }
+		}
+
+Variables.tf file:
+
+		variable "inst_ami" {
+
+		}
+
+		variable "inst_type" {
+
+		}
+
+		variable "inst_count" {
+
+		}
+
+
+Create the below files.
+
+dev.tfvars file:
+
+		inst_type = "t3.micro"
+		inst_ami = "ami-0ae47cb7b24e2d8ed"
+		inst_count = 1
+
+
+test.tfvars file: 
+
+		inst_type = "t3.micro"
+		inst_ami = "ami-0ae47cb7b24e2d8ed"
+		inst_count = 2
+
+
+prod.tfvars file: 
+
+		inst_type = "t3.micro"
+		inst_ami = "ami-0ae47cb7b24e2d8ed"
+		inst_count = 3
+
+
+Command:
+********
+terraform apply -auto-approve -var-file="dev.tfvars"
+
+====================================================================================================================
+
+2. Terraform outputs:
+---------------------
+
+CloudInfra.tf file:
+
+provider "aws" {
+  region = "ap-south-2"
+}
+resource "aws_instance" "instance" {
+  ami           = var.inst_ami
+  instance_type = var.inst_type
+  count         = var.inst_count
+  tags = {
+    name = "ccitinfra"
+  }
+}
+
+
+output "InfraDetails" {
+value = [aws_instance.instance.public_ip, aws_instance.instance.private_ip, aws_instance.instance.public_dns]
+}
+
+TO GET COMPLTE OUTPUS:
+
+output "InfraDetails" {
+value = aws_instance.instance
+}
+
+====================================================================================================================
+
+3. Terraform import:
+---------------------
+Step1:
+
+provider "aws" {
+  region = "ap-south-2"
+}
+
+resource "aws_s3_bucket" "my_bucket" {
+  bucket = "ccitbucketmarch" # Change to a globally unique name
+
+  tags = {
+    Name        = "Dept"
+    Environment = "Dev"
+  }
+}
+
+-------------------
+Step2: Add this to the script
+
+resource "aws_s3_bucket" "manual_bucket" {
+  bucket = "ccitmarch123"
+
+  tags = {
+    Name        = "Dept"
+    Environment = "Dev"
+  }
+}
+
+-------------------
+Step3: 
+
+terraform import aws_s3_bucket.manual_bucket ccitmarch123
+
+
+
+terraform state list
+terraform plan
+terraform apply
+
+
+Exclude from the stack
+-----------------------
+
+1. terraform state rm aws_s3_bucket.my_bucket
+2. terraform plan
+3. terraform apply/destroy
+

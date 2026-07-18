@@ -1,0 +1,34 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+#creating multiple users
+  User1:
+    Type: AWS::IAM::User
+    Properties:
+      UserName: user
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AdministratorAccess    
+  User2:
+    Type: AWS::IAM::User
+    Properties:
+      UserName: user2
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AdministratorAccess
+  User3:
+    Type: AWS::IAM::User
+    Properties:
+      UserName: user3
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/S3FullAccess
+#creating group
+  Group1:
+    Type: AWS::IAM::Group
+    Properties:
+      GroupName: group1
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AdministratorAccess
+        - arn:aws:iam::aws:policy/AmazonS3FullAccess
+        - arn:aws:iam::aws:policy/AmazonEC2FullAccess
+      Users:
+        - !Ref User1
+        - !Ref User2
+        - !Ref User3
