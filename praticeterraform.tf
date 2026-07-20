@@ -6,9 +6,7 @@ resource "aws_instance" "first"{
     instance_type = "t3.micro"
     count = 2
 }
-tags = {
-    Name = "Dev1"
-}
+
 resource "aws_s3_bucket" "firstbucket"{
     bucket = "dev1Bucket"
 }
