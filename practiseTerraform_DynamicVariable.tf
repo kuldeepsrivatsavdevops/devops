@@ -1,8 +1,7 @@
-provider "aws"{
+provider "aws" {
     region "ca-central-1"
 }
-resource "aws_instance" "third"
-{
+resource "aws_instance" "third" {
     ami = var.inst_ami
     instance_type = var.inst_type
     count = var.inst_count
@@ -10,8 +9,7 @@ resource "aws_instance" "third"
 tags = {
     Name = "test2"
 }
-resource "aws_s3_bucket" "thirdbucket"
-{
+resource "aws_s3_bucket" "thirdbucket" {
     bucket = "test2Bucket"
 }
 variable "inst_ami" {
