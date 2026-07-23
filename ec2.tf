@@ -7,5 +7,5 @@ resource "aws_instance" "first" {
 }
 }
 resource "aws_s3_bucket" "firstbucket" {
-    bucket = "lordBucket"
+    bucket = "lordbucket"
 }
